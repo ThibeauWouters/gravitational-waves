@@ -1,0 +1,72 @@
+ &filelist
+        base_filename='RUNNAME'
+        typefilelog='special'
+/
+
+ &savelist
+        !time_between_print=1.0d0 ! screen output every 1 second
+        !dtsave(2)=1.0d0
+        dtsave(1)=1.0d-1
+        !ditsave(1)=1
+        itsave(1,1)=0
+        itsave(1,2)=0
+ /
+
+ &stoplist
+        !it_max=1
+        time_max=10.0d0
+ /
+
+ &eos_idealgas_list
+        eos_gamma = 1.3333333333d0
+        eos_adiab = 1.0d0
+/
+
+ &grmhd_list
+        !elliptic_cleaning=.True.
+        !type_divb_fix = 'none'
+        !type_divb_fix = 'multigrid'
+        !divb_4thorder = .True.
+        divb_mg_tol = 1.0d-16
+        !type_divb_fix = 'glm'
+        !divb_glm_kappa = 5.0d0
+        type_divb_fix = 'ct'
+        type_ct = 'TYPE_CT'
+/
+
+ &methodlist
+        !time_stepper = 'onestep'
+        !time_integrator = 'Forward_Euler'
+        !time_stepper = 'threestep'
+        time_integrator = 'ssprk2'
+        flux_scheme = 20*'hll'
+        limiter=20*'woodward'
+        !positivity_preserving=.True.
+ /
+
+ &boundlist
+        typeboundary_min1 = 4*'periodic'
+        typeboundary_max1 = 4*'periodic'
+        typeboundary_min2 = 4*'periodic'
+        typeboundary_max2 = 4*'periodic'
+ /
+
+ &meshlist
+        refine_criterion=0
+        refine_max_level=1
+        !refine_threshold=20*0.1d0
+        block_nx1=16
+        domain_nx1=128
+        block_nx2=16
+        domain_nx2=128
+        iprob=1
+        xprobmin1=-0.5d0
+        xprobmax1=0.5d0
+        xprobmin2=-0.5d0
+        xprobmax2=0.5d0
+ /
+
+ &paramlist
+       courantpar=0.2
+       !slowsteps = 100
+ /

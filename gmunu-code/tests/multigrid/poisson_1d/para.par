@@ -1,0 +1,58 @@
+ &filelist
+        base_filename='output'
+/
+
+ &savelist
+        !dtsave(1)=2.0d-2
+        time_between_print=1.0d0 ! screen output every 1 second
+        !ditsave(2)=50 ! output dat at every N steps
+        !ditsave(1)=50 ! output dat at every N steps
+        itsave(1,1)=0
+        itsave(1,2)=0
+ /
+
+ &stoplist
+        it_max=1
+ /
+
+ &atmo_list
+        atmo_type = 'polytrope'
+        atmo_gamma = 2.0d0
+        atmo_adiab = 1.0d2
+        small_rho = 1.0d-10
+        small_rho_fac = 0.9d0
+/
+
+ &eos_polytrope_list
+        eos_gamma = 2.0d0
+        eos_adiab = 1.0d2
+/
+
+ &methodlist
+        time_integrator = 'onestep'
+        flux_scheme = 20*'nul'
+        limiter=20*'ppm'
+        fix_small_values = .true.
+        small_values_method='ignore'
+        !small_values_method='replace'
+        !positivity_preserving=.True.
+ /
+
+ &boundlist
+        typeboundary_min1 = 'symm','asymm'
+        typeboundary_max1 = 'symm','noinflow'
+ /
+
+ &meshlist
+        refine_max_level=1
+        refine_threshold=20*0.1d0
+        block_nx1=16
+        domain_nx1=320
+        iprob=1
+        xprobmin1=0.0d0
+        xprobmax1=1.0d0
+ /
+
+ &paramlist
+       courantpar=0.4
+ /

@@ -1,0 +1,66 @@
+ &filelist
+        base_filename='output'
+        typefilelog='special'
+/
+
+ &savelist
+        !dtsave(1)=2.0d-2
+        time_between_print=1.0d0 ! screen output every 1 second
+        dtsave(1)=2.03001708d-01 ! For log file, Note: time_gf = 2.03001708d05 
+        dtsave(2)=2.03001708d00 ! Note: time_gf = 2.03001708d05 
+        !ditsave(2)=50 ! output dat at every N steps
+        !ditsave(1)=50 ! output dat at every N steps
+        itsave(1,1)=0
+        itsave(1,2)=0
+ /
+
+ &stoplist
+        !it_max=1000
+        time_max=2.03001708d03 ! Note: time_gf = 2.03001708d05 
+        wall_time_max=1.0d2
+ /
+
+ &atmo_list
+        atmo_type = 'polytrope'
+        atmo_gamma = 2.0d0
+        atmo_adiab = 1.0d2
+        small_rho = 1.0d-10
+        small_rho_fac = 0.9d0
+/
+
+ &eos_tabulated_list
+        eos_precision = 1.0d-9
+        eos_path = '/home/ckcheong/gitlab/eos_table/Hempel_SFHoEOS_rho222_temp180_ye60_version_1.1_20120817.h5'
+/
+
+ &methodlist
+        time_integrator = 'ssprk2'
+        flux_scheme = 20*'hll'
+        limiter=20*'ppm'
+        flatsh = .True.
+        flatcd = .True.
+        fix_small_values = .true.
+        small_values_method='ignore'
+        !small_values_method='replace'
+        positivity_preserving=.True.
+ /
+
+ &boundlist
+        typeboundary_min1 = 'symm','asymm'
+        typeboundary_max1 = 'symm','noinflow'
+ /
+
+ &meshlist
+        refine_max_level=1
+        refine_threshold=20*0.1d0
+        block_nx1=16
+        domain_nx1=320
+        iprob=1
+        xprobmin1=0.0d0
+        xprobmax1=15.0d0
+ /
+
+ &paramlist
+       courantpar=0.4
+       slowsteps = 100
+ /

@@ -1,0 +1,50 @@
+  Grid settings
+  nr  =         2048
+  nth =          256
+  MLS =           40
+  NGQ =           80
+  maxloop =         1000
+  rmin =   0.0000000E+00
+  rmax =    50.00000    
+  
+  Model settings
+  rhoini =   8.0012567E-03
+  gamma  =    2.000000    
+  K1     =    100.0000    
+  omg    =   0.0000000E+00
+  
+  Relaxation settings
+  reqmax =     15.00000    
+  qfactor =   0.5000000    
+  qfactAp =   1.000000    
+  eps =       1.0000000E-07
+  tolconv =   1.0000000E-10
+  
+  Output parameters
+  Gravit. Mass =    1.450707    
+  Rest    Mass =    1.537940    
+  Proper  Mass =    1.977118    
+  Rotat.  Energy  =   0.0000000E+00
+  Angul.  Moment. =   0.0000000E+00
+  Magnet. Energy  =   0.0000000E+00
+  MEnergy  Ratio  =   0.0000000E+00
+  KEnergy  Ratio  =   0.0000000E+00
+  
+ Central Density =   8.0001839E-03
+ Equatorial Radius =    4.260254       6.290956     KM
+ Radius Ratio =    1.000000    
+ Circ Radius =    5.829918       8.608819     KM
+ OMGcen =   0.0000000E+00
+ OMGeq =   0.0000000E+00
+ Mag. Flux =   0.0000000E+00  0.000000000000000E+000 Wb
+ Mag. Dipole =   0.0000000E+00
+ B@pole =   0.0000000E+00  0.000000000000000E+000 G
+ Bmax  =   0.0000000E+00  0.000000000000000E+000 G
+ Bmax(pol)  =   0.0000000E+00  0.000000000000000E+000 G
+ Bmax(tor)  =   0.0000000E+00  0.000000000000000E+000 G
+ Bcent  =   0.0000000E+00  0.000000000000000E+000 G
+ E@pole   =   0.0000000E+00
+ E.Charge =   0.0000000E+00 VS  0.0000000E+00
+ Def.rate =  -2.6874268E-05
+ HHpol=  0.0000000E+00
+ HHtor=  0.0000000E+00

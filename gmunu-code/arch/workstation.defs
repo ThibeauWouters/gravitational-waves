@@ -1,0 +1,13 @@
+F90=mpifort
+FFLAGS = -c
+
+HDF5DIR=${HOME}/.conda/envs/gmunu_env
+HDF5INCS = -I${HDF5DIR}/include
+HDF5LIBS = -L${HDF5DIR}/lib
+
+F90FLAGS = -ffree-form -O2 -g -Wall -Wno-unused-dummy-argument	\
+-Wno-unused-function -Wno-unused -Wno-uninitialized -Wno-zerotrip  \
+${HDF5INCS} ${HDF5LIBS} \
+-fbounds-check -fbacktrace
+
+LINK= $(F90)  $(F90FLAGS)
